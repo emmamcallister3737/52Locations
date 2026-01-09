@@ -39,7 +39,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[55.82000522367394,-3.2928809934812984],[55.96754408629789,-2.805702498292266]]);
+        }).fitBounds([[55.77431333826059,-3.4210656253084744],[56.06917700599182,-2.4467086349304097]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -124,22 +124,16 @@
         function pop_52loc_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Name" colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Latitude'] !== null ? autolinker.link(String(feature.properties['Latitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Difficulty" colspan="2"><strong>Difficulty</strong><br />' + (feature.properties['Difficulty'] !== null ? autolinker.link(String(feature.properties['Difficulty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Longitude'] !== null ? autolinker.link(String(feature.properties['Longitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Transport" colspan="2"><strong>Transport</strong><br />' + (feature.properties['Transport'] !== null ? autolinker.link(String(feature.properties['Transport']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Difficulty'] !== null ? autolinker.link(String(feature.properties['Difficulty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Transport'] !== null ? autolinker.link(String(feature.properties['Transport']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Image'] !== null ? autolinker.link(String(feature.properties['Image']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Image" colspan="2"><strong>Image</strong><br />' + (feature.properties['Image'] !== null ? autolinker.link(String(feature.properties['Image']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -179,7 +173,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(116,218,95,1.0)',
+                fillColor: 'rgba(178,223,138,1.0)',
                 interactive: true,
             }
                     break;
@@ -227,7 +221,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
+                fillColor: 'rgba(227,26,28,1.0)',
                 interactive: true,
             }
                     break;
