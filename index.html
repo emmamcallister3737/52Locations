@@ -35,11 +35,11 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/52loc_1.js"></script>
+        <script src="data/52loc_v2_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[55.77431333826059,-3.4210656253084744],[56.06917700599182,-2.4467086349304097]]);
+        }).fitBounds([[55.54069269518711,-4.666109338925775],[56.713782302442795,-0.7686813774135142]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -121,7 +121,7 @@
         });
         layer_WorldImagery_0;
         map.addLayer(layer_WorldImagery_0);
-        function pop_52loc_1(feature, layer) {
+        function pop_52loc_v2_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="Name" colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -143,11 +143,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_52loc_1_0(feature) {
+        function style_52loc_v2_1_0(feature) {
             switch(String(feature.properties['Difficulty'])) {
                 case '1':
                     return {
-                pane: 'pane_52loc_1',
+                pane: 'pane_52loc_v2_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -163,7 +163,7 @@
                     break;
                 case '2':
                     return {
-                pane: 'pane_52loc_1',
+                pane: 'pane_52loc_v2_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -179,7 +179,7 @@
                     break;
                 case '3':
                     return {
-                pane: 'pane_52loc_1',
+                pane: 'pane_52loc_v2_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -195,7 +195,7 @@
                     break;
                 case '4':
                     return {
-                pane: 'pane_52loc_1',
+                pane: 'pane_52loc_v2_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -211,7 +211,7 @@
                     break;
                 case '5':
                     return {
-                pane: 'pane_52loc_1',
+                pane: 'pane_52loc_v2_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -227,7 +227,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_52loc_1',
+                pane: 'pane_52loc_v2_1',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -237,55 +237,55 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
+                fillColor: 'rgba(237,218,134,1.0)',
                 interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_52loc_1');
-        map.getPane('pane_52loc_1').style.zIndex = 401;
-        map.getPane('pane_52loc_1').style['mix-blend-mode'] = 'normal';
-        var layer_52loc_1 = new L.geoJson(json_52loc_1, {
+        map.createPane('pane_52loc_v2_1');
+        map.getPane('pane_52loc_v2_1').style.zIndex = 401;
+        map.getPane('pane_52loc_v2_1').style['mix-blend-mode'] = 'normal';
+        var layer_52loc_v2_1 = new L.geoJson(json_52loc_v2_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_52loc_1',
-            layerName: 'layer_52loc_1',
-            pane: 'pane_52loc_1',
-            onEachFeature: pop_52loc_1,
+            dataVar: 'json_52loc_v2_1',
+            layerName: 'layer_52loc_v2_1',
+            pane: 'pane_52loc_v2_1',
+            onEachFeature: pop_52loc_v2_1,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_52loc_1_0(feature));
+                return L.circleMarker(latlng, style_52loc_v2_1_0(feature));
             },
         });
-        bounds_group.addLayer(layer_52loc_1);
-        map.addLayer(layer_52loc_1);
+        bounds_group.addLayer(layer_52loc_v2_1);
+        map.addLayer(layer_52loc_v2_1);
         setBounds();
         var i = 0;
-        layer_52loc_1.eachLayer(function(layer) {
+        layer_52loc_v2_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #ffffff; font-size: 11pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_52loc_1'});
+            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #ffffff; font-size: 11pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_52loc_v2_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_52loc_1]);
+        resetLabels([layer_52loc_v2_1]);
         map.on("zoomend", function(){
-            resetLabels([layer_52loc_1]);
+            resetLabels([layer_52loc_v2_1]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_52loc_1]);
+            resetLabels([layer_52loc_v2_1]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_52loc_1]);
+            resetLabels([layer_52loc_v2_1]);
         });
         </script>        
     </body>
